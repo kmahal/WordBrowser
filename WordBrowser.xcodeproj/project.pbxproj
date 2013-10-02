@@ -23,6 +23,7 @@
 		5ACC9DB617FCA73500013541 /* WordBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACC9DB517FCA73500013541 /* WordBrowserTests.m */; };
 		5ACC9DC117FCA75800013541 /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACC9DC017FCA75800013541 /* Word.m */; };
 		5ACC9DC417FCB48600013541 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACC9DC317FCB48600013541 /* SecondViewController.m */; };
+		5ACC9DC717FCCCB300013541 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACC9DC617FCCCB300013541 /* ThirdViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,9 @@
 		5ACC9DC017FCA75800013541 /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
 		5ACC9DC217FCB48600013541 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		5ACC9DC317FCB48600013541 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		5ACC9DC517FCCCB300013541 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThirdViewController.h; path = ../ThirdViewController.h; sourceTree = "<group>"; };
+		5ACC9DC617FCCCB300013541 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThirdViewController.m; path = ../ThirdViewController.m; sourceTree = "<group>"; };
+		5ACC9DC917FCD19100013541 /* ThirdVCDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ThirdVCDelegate.h; path = ../ThirdVCDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,10 +125,13 @@
 				5ACC9D9917FCA73500013541 /* AppDelegate.h */,
 				5ACC9D9A17FCA73500013541 /* AppDelegate.m */,
 				5ACC9D9C17FCA73500013541 /* Main.storyboard */,
-				5ACC9DC217FCB48600013541 /* SecondViewController.h */,
-				5ACC9DC317FCB48600013541 /* SecondViewController.m */,
 				5ACC9D9F17FCA73500013541 /* ViewController.h */,
 				5ACC9DA017FCA73500013541 /* ViewController.m */,
+				5ACC9DC217FCB48600013541 /* SecondViewController.h */,
+				5ACC9DC317FCB48600013541 /* SecondViewController.m */,
+				5ACC9DC517FCCCB300013541 /* ThirdViewController.h */,
+				5ACC9DC617FCCCB300013541 /* ThirdViewController.m */,
+				5ACC9DC917FCD19100013541 /* ThirdVCDelegate.h */,
 				5ACC9DBF17FCA75800013541 /* Word.h */,
 				5ACC9DC017FCA75800013541 /* Word.m */,
 				5ACC9DA217FCA73500013541 /* Images.xcassets */,
@@ -261,6 +268,7 @@
 			files = (
 				5ACC9DC417FCB48600013541 /* SecondViewController.m in Sources */,
 				5ACC9DA117FCA73500013541 /* ViewController.m in Sources */,
+				5ACC9DC717FCCCB300013541 /* ThirdViewController.m in Sources */,
 				5ACC9DC117FCA75800013541 /* Word.m in Sources */,
 				5ACC9D9B17FCA73500013541 /* AppDelegate.m in Sources */,
 				5ACC9D9717FCA73500013541 /* main.m in Sources */,
@@ -472,6 +480,7 @@
 				5ACC9DBB17FCA73500013541 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5ACC9DBC17FCA73500013541 /* Build configuration list for PBXNativeTarget "WordBrowserTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +489,7 @@
 				5ACC9DBE17FCA73500013541 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

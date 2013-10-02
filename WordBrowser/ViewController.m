@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Word.h"
 #import "SecondViewController.h"
+#import "ThirdViewController.h"
 
 @interface ViewController ()
 {
@@ -89,7 +90,9 @@
     [dict setObject:cheese forKey:cheese.Name];
     [dict setObject:water forKey:water.Name];
     
-
+    
+    UIBarButtonItem * addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(openNew)];
+    self.navigationItem.rightBarButtonItem = addButton;
 }
 
 
@@ -130,14 +133,38 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-    SecondViewController *secondVC = segue.destinationViewController;
-    
-    secondVC.wordToUse = [dict objectForKey:[[dict allKeys] objectAtIndex:rowTapped]];
-    
+    if ([segue.identifier isEqualToString:@"ToSecond"]){
+        
+        SecondViewController *secondVC = segue.destinationViewController;
+        secondVC.wordToUse = [dict objectForKey:[[dict allKeys] objectAtIndex:rowTapped]];
+        secondVC.delegate = self;
+        
+       /* secondVC.reloadFirstTableBlock = ^(Word *word, NSString *value){
+          
+            [dict setObject:word forKey:value];
+            [myTableView reloadData];
+            
+        }; */
+        
+        
+        
+    }else if ([segue.identifier isEqualToString:@"ToNew"]){
+        UINavigationController *navvc = segue.destinationViewController;
+        ThirdViewController *thirdVC = [navvc viewControllers][0];
+        thirdVC.thirdVCDelegate = self;
+    }
     
 }
 
+-(void)openNew{
+    [self performSegueWithIdentifier:@"ToNew" sender:self];
+}
 
+
+-(void)thirdVCDelegate:(id)view withWord:(Word *)word {
+    [dict setObject:word forKey:word.Name];
+    [myTableView reloadData];
+}
 
 
 

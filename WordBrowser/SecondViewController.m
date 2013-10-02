@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import "ThirdViewController.h"
 
 @interface SecondViewController ()
 {
@@ -18,7 +19,7 @@
 
 @implementation SecondViewController
 
-@synthesize nameLabel, definitionLabel, synonymLabel, wordToUse, mySecondTableView;
+@synthesize nameLabel, definitionLabel, synonymLabel, wordToUse, mySecondTableView, reloadFirstTableBlock;
 
 
 - (void)viewDidLoad
@@ -37,7 +38,9 @@
     synonymArray = wordToUse.Synonyms;
     
     
-
+    UIBarButtonItem * addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(openNew)];
+    self.navigationItem.rightBarButtonItem = addButton;
+    
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -74,12 +77,32 @@
     
     SecondViewController *anotherVC = [self.storyboard instantiateViewControllerWithIdentifier:@"HITHERE"];
     anotherVC.wordToUse = [synonymArray objectAtIndex:indexPath.row];
+    anotherVC.delegate = self;
     
     [self.navigationController pushViewController:anotherVC animated:YES];
     
     
 }
 
+-(void)openNew{
+    [self performSegueWithIdentifier:@"ToNewAgain" sender:self];
+}
 
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    UINavigationController *navvc = segue.destinationViewController;
+    ThirdViewController *thirdVC = [navvc viewControllers][0];
+        thirdVC.thirdVCDelegate = self;
+    
+    
+}
+
+-(void)thirdVCDelegate:(id)view withWord:(Word *)word{
+    
+    //reloadFirstTableBlock(word, word.Name);
+    [self.delegate thirdVCDelegate:self withWord:word];
+    
+}
 
 @end
