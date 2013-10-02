@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "Word.h"
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *definitionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *synonymLabel;
+@property (weak, nonatomic) IBOutlet UITableView *mySecondTableView;
 
 @property (strong, nonatomic) Word *wordToUse;
 

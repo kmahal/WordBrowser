@@ -45,28 +45,42 @@
     myTableView.dataSource = self;
 
     Word *pizza = [[Word alloc] initWithName:@"pizza" andDefinition:@"sauce and cheese on bread"];
-    Word *sausage = [[Word alloc] initWithName:@"sausage" andDefinition:@"meat and fat in casing"];
-    Word *bread = [[Word alloc] initWithName:@"bread" andDefinition:@"grain and yeast that rises"];
-    Word *cheese = [[Word alloc] initWithName:@"cheese" andDefinition:@"milk and some fermented shit"];
-    Word *water = [[Word alloc] initWithName:@"water" andDefinition:@"h20"];
-
-    Word *car = [[Word alloc] initWithName:@"car" andDefinition:@"metal on wheels"];
-    Word *tire = [[Word alloc] initWithName:@"tire" andDefinition:@"circular object that things use to move quickly"];
-    Word *danger = [[Word alloc] initWithName:@"danger" andDefinition:@"danga danga!"];
-    Word *loyalty = [[Word alloc] initWithName:@"loyalty" andDefinition:@"a rewards program at Safeway"];
-    Word *love = [[Word alloc] initWithName:@"love" andDefinition:@"chemical reaction in your brain that makes you do dumb shit"];
-
-    pizza.Synonyms = @[@"flatbread", @"italian food"];
-    sausage.Synonyms = @[@"meat pole", @"seasoned bar meat"];
-    bread.Synonyms = @[@"raised grain", @"food"];
-    cheese.Synonyms = @[@"molded milk", @"curds"];
-    water.Synonyms = @[@"agua", @"fresco"];
+    Word *flatbread = [[Word alloc] initWithName:@"flatbread" andDefinition:@"kinda like pizza"];
+    Word *breadAndSauce = [[Word alloc] initWithName:@"bread and sauce" andDefinition:@"kinda like pizza"];
     
-    car.Synonyms = @[@"automobile", @"gardi"];
-    tire.Synonyms = @[@"wheel", @"round thing"];
-    danger.Synonyms = @[@"clear", @"present"];
-    loyalty.Synonyms = @[@"love", @"relation"];
-    love.Synonyms = @[@"pyaar", @"ishq"];
+    Word *sausage = [[Word alloc] initWithName:@"sausage" andDefinition:@"meat and fat in casing"];
+    Word *meatStick = [[Word alloc] initWithName:@"Meat Stick" andDefinition:@"kinda like sausage"];
+    Word *seasonedShreds = [[Word alloc] initWithName:@"seasonedShreds" andDefinition:@"kinda like sausage"];
+    
+    Word *bread = [[Word alloc] initWithName:@"bread" andDefinition:@"grain and yeast that rises"];
+    Word *raisedGrain = [[Word alloc] initWithName:@"raised grains" andDefinition:@"kinda like bread"];
+    Word *loaf = [[Word alloc] initWithName:@"loaf" andDefinition:@"kinda like bread"];
+
+    Word *cheese = [[Word alloc] initWithName:@"cheese" andDefinition:@"milk and some fermented shit"];
+    Word *curd = [[Word alloc] initWithName:@"curd" andDefinition:@"kinda like cheese"];
+    Word *fermentedMilk = [[Word alloc] initWithName:@"fermented milk" andDefinition:@"kinda like cheese"];
+
+    Word *water = [[Word alloc] initWithName:@"water" andDefinition:@"h20"];
+    Word *h20 = [[Word alloc] initWithName:@"h20" andDefinition:@"it's water"];
+    Word *agua = [[Word alloc] initWithName:@"agua" andDefinition:@"it's water in spanish"];
+
+
+    pizza.Synonyms = @[flatbread, breadAndSauce];
+    sausage.Synonyms = @[meatStick, seasonedShreds];
+    bread.Synonyms = @[raisedGrain, loaf];
+    cheese.Synonyms = @[curd, fermentedMilk];
+    water.Synonyms = @[h20, agua];
+    
+    flatbread.Synonyms = @[pizza, breadAndSauce];
+    meatStick.Synonyms = @[sausage, seasonedShreds];
+    raisedGrain.Synonyms = @[bread, loaf];
+    curd.Synonyms = @[cheese, fermentedMilk];
+    h20.Synonyms = @[water, agua];
+    breadAndSauce.Synonyms = @[flatbread, pizza];
+    seasonedShreds.Synonyms = @[meatStick, sausage];
+    loaf.Synonyms = @[raisedGrain, bread];
+    fermentedMilk.Synonyms = @[curd, cheese];
+    agua.Synonyms = @[h20, water];
     
     
     [dict setObject:pizza forKey:pizza.Name];
@@ -75,14 +89,6 @@
     [dict setObject:cheese forKey:cheese.Name];
     [dict setObject:water forKey:water.Name];
     
-    [dict setObject:car forKey:car.Name];
-    [dict setObject:tire forKey:tire.Name];
-    [dict setObject:danger forKey:danger.Name];
-    [dict setObject:loyalty forKey:loyalty.Name];
-    [dict setObject:love forKey:love.Name];
-    
-    
-    NSLog(@"%@", dict);
 
 }
 
